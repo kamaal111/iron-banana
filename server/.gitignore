@@ -29,3 +29,5 @@ lerna-debug.log*
 
 prisma/dev.db-journal
 prisma/dev.db
+
+server/index.html

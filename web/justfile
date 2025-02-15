@@ -1,6 +1,14 @@
+default:
+    just --list --unsorted
+
 dev: install-modules
     pnpm run dev
 
+build: install-modules
+    #!/bin/zsh
+
+    pnpm run build
+    rm dist/.gitkeep
+
 install-modules:
     pnpm i
-
