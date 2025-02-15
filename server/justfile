@@ -1,0 +1,8 @@
+dev: install-modules migrate
+    pnpm run dev
+
+install-modules:
+    pnpm i
+
+migrate:
+    pnpm migrate

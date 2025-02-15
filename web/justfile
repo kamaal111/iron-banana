@@ -1,0 +1,6 @@
+dev: install-modules
+    pnpm run dev
+
+install-modules:
+    pnpm i
+
