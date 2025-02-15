@@ -13,15 +13,6 @@ const App = () => {
     await port.open({ baudRate: 115200 });
 
     setConnectedPort(port);
-
-    // const writer = port.writable.getWriter();
-    // const encoder = new TextEncoder();
-
-    // const data = encoder.encode(userData);
-
-    // // Send the data to the device.
-    // await writer.write(data);
-    // writer.releaseLock();
   }
 
   async function getPaired() {
@@ -30,10 +21,6 @@ const App = () => {
       (ports as Array<RealSerialPort>).find((port) => port.connected) ?? null;
 
     setConnectedPort(connectedPort);
-  }
-
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
   }
 
   React.useEffect(() => {
@@ -46,12 +33,9 @@ const App = () => {
         <button type="button" onClick={handleClick}>
           Connect to banana
         </button>
-      ) : null}
-      <form onSubmit={handleSubmit}>
-        <label>Username:</label>
-        <input type="text" minLength={3} />
-        <button type="submit">Store</button>
-      </form>
+      ) : (
+        <h1>Connected</h1>
+      )}
     </div>
   );
 };

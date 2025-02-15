@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id   Int    @id @default(autoincrement())
-  team String @unique
+model Scores {
+  team  Int @id @unique
+  score Int
 }
